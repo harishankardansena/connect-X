@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import useAuthStore from './store/authStore';
+import useCallStore from './store/callStore';
 import { SocketProvider } from './context/SocketContext';
 
 // Pages
