@@ -49,9 +49,18 @@ export const useWebRTC = () => {
       }
     };
 
+    pc.oniceconnectionstatechange = () => {
+      console.log('❄️ ICE Connection State:', pc.iceConnectionState);
+      if (pc.iceConnectionState === 'failed') {
+        toast.error('Connection failed. Please try again on Wi-Fi.');
+      }
+    };
+
     pc.onconnectionstatechange = () => {
+      console.log('🤝 Peer Connection State:', pc.connectionState);
       if (pc.connectionState === 'connected') {
         setCallConnected();
+        toast.success('Call connected!');
       }
     };
 
