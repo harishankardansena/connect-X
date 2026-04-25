@@ -1,0 +1,18 @@
+{
+  "short_name": "Connect X",
+  "name": "Connect X - Global Messaging",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#7c3aed",
+  "background_color": "#0f172a",
+  "orientation": "portrait",
+  "description": "Global username-based messaging and calling app."
+}

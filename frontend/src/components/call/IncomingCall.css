@@ -1,0 +1,97 @@
+.incoming-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.incoming-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 28px;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  box-shadow: var(--shadow-lg);
+  min-width: 280px;
+}
+
+.incoming-ripple {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ripple-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(124, 58, 237, 0.3);
+  animation: rippleExpand 2s ease-out infinite;
+}
+
+.r1 { width: 90px; height: 90px; animation-delay: 0s; }
+.r2 { width: 120px; height: 120px; animation-delay: 0.4s; }
+.r3 { width: 150px; height: 150px; animation-delay: 0.8s; }
+
+@keyframes rippleExpand {
+  0%   { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.incoming-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.incoming-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.incoming-type {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.incoming-actions {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.call-action-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  color: white;
+}
+
+.reject-btn {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.reject-btn:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(239, 68, 68, 0.5); }
+
+.accept-btn {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+}
+
+.accept-btn:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(34, 197, 94, 0.5); }

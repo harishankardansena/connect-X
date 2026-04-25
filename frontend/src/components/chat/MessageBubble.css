@@ -1,0 +1,134 @@
+.msg-wrapper {
+  display: flex;
+  margin-bottom: 4px;
+  animation: fadeUp 0.25s ease;
+}
+
+.msg-grouped { margin-bottom: 1px; }
+
+.msg-own { justify-content: flex-end; }
+.msg-other { justify-content: flex-start; }
+
+.msg-bubble {
+  max-width: 68%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  position: relative;
+  word-break: break-word;
+}
+
+.msg-bubble-own {
+  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+  color: white;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.25);
+}
+
+.msg-bubble-other {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-bottom-left-radius: 5px;
+}
+
+.msg-bubble-media {
+  padding: 6px;
+  overflow: hidden;
+}
+
+.msg-text {
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* Images */
+.msg-image {
+  max-width: 280px;
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 13px;
+  cursor: pointer;
+  display: block;
+  transition: opacity var(--transition-fast);
+}
+
+.msg-image:hover { opacity: 0.9; }
+
+/* Video */
+.msg-video {
+  max-width: 280px;
+  max-height: 240px;
+  width: 100%;
+  border-radius: 13px;
+  display: block;
+  background: #000;
+}
+
+/* File */
+.msg-file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  transition: background var(--transition-fast);
+}
+
+.msg-file:hover { background: rgba(255,255,255,0.1); }
+
+/* Expired */
+.expired-media {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  padding: 4px 8px;
+  font-style: italic;
+}
+
+.msg-deleted {
+  background: transparent !important;
+  border: 1px dashed var(--border-default) !important;
+  box-shadow: none !important;
+}
+
+.msg-deleted span {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* Expiry label */
+.expiry-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Meta */
+.msg-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.msg-time {
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.msg-status { display: flex; align-items: center; }
+
+.seen-icon { color: #a5f3fc; }
+.sent-icon { opacity: 0.6; }

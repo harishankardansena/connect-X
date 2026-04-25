@@ -1,0 +1,137 @@
+.call-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #0a0a0f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Remote Video */
+.remote-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Audio call background */
+.audio-call-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.15) 0%, #0a0a0f 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-call-pulse {
+  animation: ringPulse 2s ease-out infinite;
+  border-radius: 50%;
+}
+
+/* Overlay top info */
+.call-overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 30px 80px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+  z-index: 10;
+}
+
+.call-user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.call-user-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.call-status-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Local Video PiP */
+.local-video-pip {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 130px;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  z-index: 20;
+}
+
+.local-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* mirror */
+}
+
+/* Controls */
+.call-controls {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  z-index: 10;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+  padding: 16px 24px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.control-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.control-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); }
+
+.control-active-danger {
+  background: rgba(239, 68, 68, 0.3) !important;
+  border: 1px solid rgba(239, 68, 68, 0.5);
+}
+
+.control-end {
+  background: linear-gradient(135deg, #dc2626, #ef4444) !important;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+  width: 64px;
+  height: 64px;
+}
+
+.control-end:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.6) !important;
+}

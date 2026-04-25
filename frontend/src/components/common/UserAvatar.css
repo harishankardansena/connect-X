@@ -1,0 +1,7 @@
+/* UserAvatar — all base styles are in index.css, this adds any extras */
+.avatar span {
+  font-family: var(--font-sans);
+  line-height: 1;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+}

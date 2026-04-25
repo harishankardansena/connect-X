@@ -1,0 +1,26 @@
+.chat-page {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+@media (max-width: 768px) {
+  .chat-page .sidebar {
+    width: 100%;
+    display: flex;
+  }
+  
+  .chat-page .chat-window {
+    display: none;
+    width: 100%;
+  }
+
+  .chat-page.chat-active-mobile .sidebar {
+    display: none;
+  }
+
+  .chat-page.chat-active-mobile .chat-window {
+    display: flex;
+  }
+}
