@@ -10,6 +10,8 @@ import RegisterPage from './pages/auth/RegisterPage';
 import ChatPage from './pages/chat/ChatPage';
 import AdminPage from './pages/admin/AdminPage';
 import ProfilePage from './pages/profile/ProfilePage';
+import IncomingCall from './components/call/IncomingCall';
+import CallScreen from './components/call/CallScreen';
 
 // Protected Route Wrapper
 const ProtectedRoute = ({ children }) => {
@@ -40,6 +42,7 @@ function App() {
             <Route path="/" element={<Navigate to="/chat" replace />} />
             <Route path="*" element={<Navigate to="/chat" replace />} />
           </Routes>
+          <IncomingCallWrapper />
         </SocketProvider>
       ) : (
         <Routes>
@@ -63,5 +66,15 @@ function App() {
     </BrowserRouter>
   );
 }
+
+const IncomingCallWrapper = () => {
+  const { incomingCall, activeCall } = useCallStore();
+  return (
+    <>
+      {incomingCall && !activeCall && <IncomingCall />}
+      {activeCall && <CallScreen />}
+    </>
+  );
+};
 
 export default App;
