@@ -63,6 +63,16 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Connect-X API Server is running',
+    version: '1.0.0',
+    docs: 'https://github.com/harishankardansena/connect-X'
+  });
+});
+
 // 🔒 DB guard middleware — blocks API calls if DB is not ready
 app.use('/api', (req, res, next) => {
   if (!isDbConnected) {
